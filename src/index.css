@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Palatino", "Palatino Linotype", "Book Antiqua", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Custom CSS to implement the exact styling from the user's template */
+body {
+  font-family: "Palatino", "Palatino Linotype", "Book Antiqua", "Georgia", serif;
+  background: linear-gradient(-45deg, #8A2BE2, #FF0000, #0000FF, #8A2BE2); /* Purple, Red, Blue, Purple */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  min-height: 100vh;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Style for sticky table header */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Style for dropdown options */
+select option {
+  background: rgba(17, 12, 28, 0.95);
+  color: white;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(15, 12, 30, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(138, 43, 226, 0.3);
+}
+
+.glass-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(138, 43, 226, 0.6);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
+}
+
+/* Additional layout styling */
+.glass-table-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.15s ease;
+}
+
+.glass-table-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Neutral professional dark mode theme */
+body.theme-neutral {
+  background: #090d16;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(15, 23, 42, 0.9) 0, transparent 40%),
+    radial-gradient(at 50% 0%, rgba(30, 41, 59, 0.5) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.9) 0, transparent 40%);
+  animation: none;
+}
+
+body.theme-neutral .glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+body.theme-neutral .glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+body.theme-neutral .glass-card:hover {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+}
+
+body.theme-neutral .glass-input {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-neutral .glass-input:focus {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+body.theme-neutral .text-indigo-400 {
+  color: #60a5fa !important; /* more professional blue */
+}
+
+body.theme-neutral .text-indigo-300 {
+  color: #93c5fd !important;
+}
+
+body.theme-neutral .bg-indigo-600 {
+  background-color: #2563eb !important; /* professional blue */
+}
+
+body.theme-neutral .bg-indigo-500\/10 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+body.theme-neutral .border-indigo-500\/20 {
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+body.theme-neutral .shadow-indigo-600\/30 {
+  --tw-shadow-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+body.theme-neutral .from-indigo-500 {
+  --tw-gradient-from: #2563eb !important;
+  --tw-gradient-to: rgba(37, 99, 235, 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
